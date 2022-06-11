@@ -49,17 +49,17 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-left: 100px">
         <h3>Giỏ hàng của bạn!</h3>
         <div class="col">
             <th:block th:each="item, status : ${cartItems}">
-                <div class="row border rounded" th:with="product= ${item.getProduct()}">
+                <div class="row border rounded" th:with="product = ${item.product}">
                     <div class="col">
                         <div>[[${status.count}]]</div>
                         <div>Remove Icon</div>
                     </div>
                     <div class="col">
-                        <img class="img-fluid" th:src="${product.getProductImages()}" alt="image-1"/>
+                        <img class="img-fluid" th:src="@{${product.productImages[0]}}" alt="image-1"/>
                     </div>
                 </div>
             </th:block>

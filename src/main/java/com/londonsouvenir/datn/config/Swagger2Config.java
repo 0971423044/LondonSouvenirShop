@@ -17,7 +17,7 @@ public class Swagger2Config {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.company.demo"))
+                .apis(RequestHandlerSelectors.basePackage("com.londonsouvenir.datn"))
                 .paths(PathSelectors.regex("/.*"))
                 .build()
                 .apiInfo(apiEndPointsInfo());
@@ -25,9 +25,9 @@ public class Swagger2Config {
 
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder()
-                .title("Obo Stadium website")
-                .description("Obo Stadium REST API")
-                .contact(new Contact("Trịnh Minh Thúy", "", "minhthuy30197@gmail.com"))
+                .title("London Souvenir website")
+                .description("London Souvenir REST API")
+                .contact(new Contact("Nghiêm Văn Xuân", "", "vanxuan2042000@gmail.com"))
                 .version("1.0.0")
                 .build();
     }

@@ -12,9 +12,9 @@ import java.util.List;
 public class ShoppingCartService {
     @Autowired
     private CartItemRepository cartRepo;
-    public List<CartItem> listCartItems(User user)
-    {
-        return cartRepo.findByUser(user);
-    }
+//    public List<CartItem> listCartItems(User user)
+//    {
+//        return cartRepo.fint(user);
+//    }
 
 }

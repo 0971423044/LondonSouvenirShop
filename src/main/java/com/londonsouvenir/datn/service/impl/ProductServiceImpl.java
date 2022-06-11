@@ -70,11 +70,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductInfoDto> getListSuggestProduct() {
-        // Get Obo choices
+        // Get london choices
         List<Configuration> configs = configurationRepository.findAll();
         if (configs.size() > 0) {
             Configuration config = configs.get(0);
-            List<ProductInfoDto> products = productRepository.getListSuggestProduct(config.getOboChoices(), 5);
+            List<ProductInfoDto> products = productRepository.getListSuggestProduct(config.getLondonChoices(), 5);
 
             return promotionService.checkPublicPromotion(products);
         }

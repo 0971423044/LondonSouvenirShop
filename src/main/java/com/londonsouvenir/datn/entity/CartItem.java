@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Getter
 @Setter
@@ -26,11 +27,13 @@ public class CartItem {
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private  Product product;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private  User user;
+
+
 
     private int quantity;
 

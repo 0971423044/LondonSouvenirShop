@@ -238,7 +238,7 @@
                 if (size == null || size == "") {
                     toastr.warning("Sản phẩm tạm hết hàng. Vui lòng đặt hàng sau.");
                 } else {
-                    location.href = "/shopping-cart?id="+[[${product.id}]]+"&size="+size;
+                    location.href = "/shopping-cart/"+[[${product.id}]];
                 }
             } else {
                 toastr.warning("Vui lòng đăng nhập để đặt hàng");

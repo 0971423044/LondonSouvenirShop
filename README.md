@@ -1,8 +1,5 @@
-## OBO STADIUM WEBSITE
-Simple e-commerce website
-
-## Systems analysis and design
-[Document here](https://docs.google.com/document/d/1-6Ru2IOioTl3lg0s0TrXmLUL3CNCRertbH4wIG_1z78/edit?usp=sharing)
+## LONDON SOUVENIR WEBSITE 
+e-commerce website for football
 
 ## Running the application locally
 
@@ -22,13 +19,13 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
-Import database from ```obo.sql```. Using two default account:
+Import database from ```football.sql```. Using two default account:
 
 - Admin account:
-    - Username: admin@obostadium.com
+    - Username: london@sovenir.com
     - Password: 123456
 - Member account:
-    - Username: monguyen@gmail.com
+    - Username: xuanxhaka@gmail.com
     - Password: 123456
     
 
@@ -41,11 +38,5 @@ To access url ```/admin``` to get admin pages.
 - [Maven](https://mvnrepository.com/) - Dependency Management
 
 ## Author
-[Trinh Minh Thuy](https://github.com/minhthuy30197)
+[Nghiem Van Xuan](https://github.com/0971423044)
 
-
-------------
-
-### Hướng dẫn chạy bằng Docker Compose
-Cần cài đặt Docker và Docker Compose. Tự google search cách cài nhé
-Sau đó chạy file **build.sh**
