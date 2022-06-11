@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-fragment(
+                                                ~{:: title},
+                                                'short-header',
+                                                ~{:: #css-resources},
+                                                ~{:: #js-resources},
+                                                ~{:: #main-content}
+                                               )}">
+
+<head>
+    <title>Giỏ Hàng</title>
+
+    <th:block id="css-resources">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/header.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/buying/product-info.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/buying/pricing.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/buying/shipping-info.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/product-details/size-choose.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/buying/buying-section.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/product-details/size-guide-table.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/input-radio.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/except-home-page.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/buying.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/components/header.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/except-home-page.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/account.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/account-setting.css}"/>
+    </th:block>
+</head>
+<body>
+<main id="main-content" class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="left-sidebar">
+                <div class="header">
+                    <div class="avatar"><img class="img-fluid" th:src="@{/image/post/avatar.png}" alt="avatar"/></div>
+                    <div class="user-info">
+                        <div class="user-name" th:text="${user_fullname}"></div>
+                        <div class="edit-profile">Chỉnh sửa tài khoản</div>
+                    </div>
+                </div>
+                <div class="break-line"></div>
+                <div class="nav-sidebar">
+                    <a class="account nav-item" href="/tai-khoan">Quản lý tài khoản</a>
+                    <a class="buying-order nav-item" href="/tai-khoan/lich-su-giao-dich">Quản lý đơn hàng</a>
+                    <a class="btn btn-primary red-btn sign-out-btn" href="/api/logout">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Giỏ hàng của bạn!</h3>
+        <div class="col">
+            <th:block th:each="item, status : ${cartItems}">
+                <div class="row border rounded" th:with="product= ${item.getProduct()}">
+                    <div class="col">
+                        <div>[[${status.count}]]</div>
+                        <div>Remove Icon</div>
+                    </div>
+                    <div class="col">
+                        <img class="img-fluid" th:src="${product.getProductImages()}" alt="image-1"/>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</main>
+
+<th:block id="js-resources">
+    <script th:src="@{/script/except-home-page.js}"></script>
+<!--    <script th:src="@{/script/account.js}"></script>-->
+</th:block>
+</body>
+</html>
