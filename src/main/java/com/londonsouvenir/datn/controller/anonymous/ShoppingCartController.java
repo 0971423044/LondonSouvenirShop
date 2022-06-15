@@ -3,11 +3,10 @@ package com.londonsouvenir.datn.controller.anonymous;
 import com.londonsouvenir.datn.entity.CartItem;
 import com.londonsouvenir.datn.entity.Product;
 import com.londonsouvenir.datn.exception.NotFoundException;
-import com.londonsouvenir.datn.model.dto.DetailProductInfoDto;
 import com.londonsouvenir.datn.repository.CartItemRepository;
 import com.londonsouvenir.datn.repository.ProductRepository;
 import com.londonsouvenir.datn.service.ProductService;
-import com.londonsouvenir.datn.service.ShoppingCartService;
+import com.londonsouvenir.datn.service.impl.ShoppingCartService;
 import com.londonsouvenir.datn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ShoppingCartController {
